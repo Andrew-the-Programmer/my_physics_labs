@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,compat=1.9}
+ 
+\usepgfplotslibrary{external}
+\tikzexternalize
+ 
+\begin{document}
+ 
+\begin{tikzpicture}
+\begin{axis}
+\addplot[color=blue]{exp(x)};
+\end{axis}
+\end{tikzpicture}
+ 
+\hskip 8pt
+ 
+\begin{tikzpicture}
+\begin{axis}
+\addplot3[
+    surf,
+]
+{exp(y^2-x^2)*x};
+\end{axis}
+\end{tikzpicture}
+\end{document}
